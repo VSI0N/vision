@@ -1,7 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
+import cv2
 
 app = Flask(__name__)
 
+
+camera = cv2.VideoCapture(0)
 
 @app.route("/")
 def home():
@@ -12,6 +15,24 @@ def home():
 @app.route("/V15l0N")
 def vision():
   return render_template('vision.html')
+
+
+
+def vidstream():
+  while True:
+    success, frame = camera.read()
+    if not success:
+      break
+    else:
+      ret, buffer = cv2.imencode('.jpg', frame)
+      frame = buffer.tobytes()
+      yield(b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' +frame+ b'\r\n')
+
+
+
+@app.route("/video_stream")
+def video_stream():
+  return Response(vidstream(), mimetype='multipart/x-mixed-replace;boundary=frame')
 
 
 
