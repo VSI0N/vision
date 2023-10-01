@@ -1,5 +1,4 @@
-#TEAM VISIONN
-# AI-Enhanced Railway Safety and Crowd Management
+# TEAM VISIONN: AI-Enhanced Railway Safety and Crowd Management
 
 
 ## Table of Contents
