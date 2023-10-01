@@ -11,6 +11,10 @@ def home():
   return render_template('home.html')
 
 
+@app.route("/cam")
+def detect():
+  return render_template('detection.html')
+
 
 @app.route("/V15l0N")
 def vision():
