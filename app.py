@@ -19,6 +19,7 @@ ZONE_POLYGON = np.array([[0, 0], [0.5, 0], [0.5, 1], [0, 1]])
 
 @app.route("/")
 def home():
+    return render_template('home.html')
 
 @app.route("/V15l0N")
 def vision():
