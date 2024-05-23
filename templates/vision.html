@@ -22,7 +22,7 @@
    <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
       <div class="logo">
-        <a href="home.html"><img src="/static/images/vision2.png" alt="" class="img-fluid"></a>
+        <a href="/"><img src="/static/images/vision2.png" alt="" class="img-fluid"></a>
       </div>  
     </div>
   </header>
@@ -31,26 +31,10 @@
   <!-- ======= Hero Section ======= -->
   <section>
     <div class="hero container d-flex flex-column align-items-center">
-      <h1>Coming Soon</h1>
-      <h2>We're are currently working on the website and we'll ready to launch after</h2>
-      <div class="countdown d-flex justify-content-center" data-count="2023/12/5">
-        <div>
-          <h3>9</h3>
-          <h4>Days</h4>
-        </div>
-        <div>
-          <h3>15</h3>
-          <h4>Hours</h4>
-        </div>
-        <div>
-          <h3>30</h3>
-          <h4>Minutes</h4>
-        </div>
-        <div>
-          <h3>10</h3>
-          <h4>Seconds</h4>
-        </div>
-      </div>
+      <div class="video-stream mt-5">
+        <h1>Object Detection Stream</h1>
+        <img src="{{ url_for('video_stream') }}" width="640" height="480" class="border rounded">
+     </div>
     </div>
   </section>
   <!-- End Hero -->
