@@ -12,8 +12,8 @@ model = YOLO("yolov8s.pt").to(device)
 
 # Set webcam resolution
 camera = cv2.VideoCapture(0)
-camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
 ZONE_POLYGON = np.array([[0, 0], [0.5, 0], [0.5, 1], [0, 1]])
 
@@ -21,9 +21,13 @@ ZONE_POLYGON = np.array([[0, 0], [0.5, 0], [0.5, 1], [0, 1]])
 def home():
     return render_template('home.html')
 
-@app.route("/V15l0N")
+@app.route("/templates/vision.html")
 def vision():
     return render_template('vision.html')
+
+@app.route("/templates/detection.html")
+def stream():
+    return render_template('detection.html')
 
 def yolov8_to_detections(yolov8_results, img_size):
     detections = []
